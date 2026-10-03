@@ -2,25 +2,210 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Etch A Sketch</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 <body>
-    <button class="reset">NEW</button>
-    <button class="refresh">REFRESH</button>
-    <div class="container"></div>
-    <div class="color">
-        <button class="color" data-color="red"></button>
-        <button class="color" data-color="blue"></button>
-        <button class="color" data-color="green"></button>
+
+    <main class="etch-workspace">
+
+        <!-- =========================
+             DRAWING SPACE
+        ========================== -->
+
+        <section class="drawing-area">
+            <div class="container"></div>
+        </section>
+
+
+        <!-- =========================
+             TOOL PANEL
+        ========================== -->
+
+        <aside class="tool-panel">
+
+            <!-- TOOLS -->
+
+<div class="tool-section">
+
+    <span class="tool-label">
+        TOOLS
+    </span>
+
+    <button
+        class="tool-button refresh"
+        type="button"
+    >
+        CLEAR
+    </button>
+
+    <button
+        class="tool-button"
+        id="undo"
+        type="button"
+    >
+        UNDO
+    </button>
+
+    <button
+        class="tool-button"
+        id="redo"
+        type="button"
+    >
+        REDO
+    </button>
+
+    <button
+        class="tool-button eraser"
+        type="button"
+    >
+        <span class="eraser-icon">▱</span>
+        <span>ERASER</span>
+    </button>
+
+
+    <div class="save-area">
+
+        <select
+            class="save-format"
+            id="saveFormat"
+        >
+            <option value="png">PNG</option>
+            <option value="jpg">JPG</option>
+            <option value="webp">WEBP</option>
+            <option value="pdf">PDF</option>
+        </select>
+
+        <button
+            class="tool-button save-button"
+            id="saveButton"
+            type="button"
+        >
+            SAVE
+        </button>
+
     </div>
+
+</div>
+
+            <!-- GRID -->
+
+            <div class="tool-section">
+
+                <span class="tool-label">
+                    GRID
+                </span>
+
+                <div class="grid-options">
+
+                    <button
+                        class="grid-size"
+                        data-size="16"
+                        type="button"
+                    >
+                        16
+                    </button>
+
+                    <button
+                        class="grid-size"
+                        data-size="24"
+                        type="button"
+                    >
+                        24
+                    </button>
+
+                    <button
+                        class="grid-size active"
+                        data-size="32"
+                        type="button"
+                    >
+                        32
+                    </button>
+
+                    <button
+                        class="grid-size"
+                        data-size="48"
+                        type="button"
+                    >
+                        48
+                    </button>
+
+                    <button
+                        class="grid-size"
+                        data-size="64"
+                        type="button"
+                    >
+                        64
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- COLOR -->
+
+            <div class="tool-section">
+
+                <span class="tool-label">
+                    COLOR
+                </span>
+
+                <div class="color-picker-row">
+
+                    <input
+                        class="color-picker"
+                        type="color"
+                        value="#111111"
+                    >
+
+                    <span class="current-color">
+                        #111111
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PALETTE -->
+
+            <div class="tool-section">
+
+                <span class="tool-label">
+                    PALETTE
+                </span>
+
+                <button
+                    class="magic-button"
+                    type="button"
+                >
+                    MAGIC ✦
+                </button>
+
+                <div class="palette"></div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
     <script src="script.js"></script>
-    <!-- next thing to do.
-     1. add a fancy pallette
-     2. bucket of colors.
-     3. undo
-     4. save the activity
-     5. store as image  -->
+
 </body>
 </html>
